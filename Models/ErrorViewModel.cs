@@ -1,4 +1,4 @@
-namespace Appointment_Booking_Service.Models
+namespace AppointmentBookingService.Models
 {
     public class ErrorViewModel
     {

@@ -1,8 +1,8 @@
-﻿using Appointment_Booking_Service.Models;
+﻿using AppointmentBookingService.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Appointment_Booking_Service.Controllers
+namespace AppointmentBookingService.Controllers
 {
     public class HomeController : Controller
     {
