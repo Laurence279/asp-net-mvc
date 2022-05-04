@@ -8,16 +8,19 @@ namespace AppointmentBookingService.Controllers
 
         // GET: /Booking
 
-        public string Index()
+        public IActionResult Index()
         {
-            return "Default action.";
+            return View();
         }
 
         // GET: /Booking/Welcome
 
-        public string Welcome(string name, int ID = 1)
+        public IActionResult Welcome(string name = "No name given!", int ID = 1)
         {
-            return HtmlEncoder.Default.Encode($"Hello {name}! ID: {ID}");
+            ViewData["Name"] = name;
+            ViewData["ID"] = ID;
+            Console.WriteLine(ViewData);
+            return View();
         }
     }
 }
