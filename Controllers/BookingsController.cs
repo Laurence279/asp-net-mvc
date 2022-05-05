@@ -21,9 +21,17 @@ namespace AppointmentBookingService.Controllers
         }
 
         // GET: Bookings
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Booking.ToListAsync());
+            var bookings = from m in _context.Booking
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                bookings = bookings.Where(s => s.Name!.Contains(searchString));
+            }
+
+            return View(await bookings.ToListAsync());
         }
 
         // GET: Bookings/Details/5
