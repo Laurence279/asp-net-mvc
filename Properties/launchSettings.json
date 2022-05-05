@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Appointment_Booking_Service": {
+    "AppointmentBookingService": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

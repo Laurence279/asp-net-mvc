@@ -1,4 +1,10 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using AppointmentBookingService.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppointmentBookingServiceContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AppointmentBookingServiceContext") ?? throw new InvalidOperationException("Connection string 'AppointmentBookingServiceContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
