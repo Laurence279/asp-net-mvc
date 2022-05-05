@@ -59,6 +59,7 @@ namespace AppointmentBookingService.Controllers
         {
             if (ModelState.IsValid)
             {
+                booking.Reference = Guid.NewGuid().ToString()[..8].ToUpper();
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
